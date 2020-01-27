@@ -1,0 +1,72 @@
+# Project information
+site_name: 'UpdateHub'
+site_description: 'All your devices, always updated'
+site_url: 'https://github.com/UpdateHub'
+
+
+# Copyright
+copyright: 'Copyright &copy; 2019 O.S.System'
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  logo: 'img/assets/favicon.ico'
+  feature:
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - type: 'github'
+      link: 'https://github.com/OSSystems'
+    - type: 'twitter'
+      link: 'https://twitter.com/OSSystemsNews?s=20'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/ossystems'
+
+
+# Google Analytics
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+# Navigation
+nav:
+- What is UpdateHub: introduction/what-is-updatehub.md
+- Quick starting with Raspberry Pi 3: getting-started/quick-starting-with-raspberrypi3.md
+- UpdateHub Cloud: updatehub-cloud/updatehub-cloud.md
+#  - Dashboard: updatehub-cloud/dashboard.md
+#  - Product: updatehub-cloud/product.md
+#  - Device: updatehub-cloud/device.md
+#  - Package: updatehub-cloud/package.md
+#  - Rollout: updatehub-cloud/rollout.md
+#  - Settings: updatehub-cloud/settings.md
+- Yocto Project guides: yocto-project-guides/yocto-project-guides.md
+#  - Create project from scratch: yocto-project-guides/create-project-from-scratch.md
+#  - Integrating onto a existent project: yocto-project-guides/integrating-onto-a-existent-project.md
+- Yocto Project reference: yocto-project-reference/yocto-project-reference.md
+#  - Supported version: yocto-project-reference/supported-version.md
+#  - Using UpdateHub platform: yocto-project-reference/using-updatehub-platform.md
+#  - Adding layer to your project: yocto-project-reference/adding-layer-to-your-project.md
+#  - Configurating UpdateHub variables: yocto-project-reference/configurating-updatehub-variables.md
+#  - Setting up RSA key: yocto-project-reference/setting-up-rsa-key.md
+#  - Pushing an update package: yocto-project-reference/pushing-an-update-package.md
+#  - Glossary: yocto-project-reference/glossary.md
+- Advanced: advanced/advanced.md
+#  - Generating RSA Key: advanced/generating-rsa-key.md
+- FAQ: 
+  - Questions: faq/faq-questions.md 
