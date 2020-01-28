@@ -3,9 +3,8 @@ site_name: 'UpdateHub'
 site_description: 'All your devices, always updated'
 site_url: 'https://github.com/UpdateHub'
 
-
 # Copyright
-copyright: 'Copyright &copy; 2019 O.S.System'
+copyright: 'Copyright &copy; 2020 O.S.Systems'
 
 # Configuration
 theme:
@@ -19,6 +18,7 @@ theme:
     code: 'Roboto Mono'
   logo: 'img/assets/favicon.ico'
   feature:
+
 # Customization
 extra:
   manifest: 'manifest.webmanifest'
