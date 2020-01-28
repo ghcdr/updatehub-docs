@@ -170,9 +170,8 @@ directory:
  *build/tmp/deploy/images/raspberrypi3/*
 
  and type this:
-!!! attention "Attention"
-	Pay attention!!! Check the name of the SD card device before executing the
-  	command below!
+!!! danger "Attention"
+	Check the name of the SD card device before executing the command below!
 ```
 zcat updatehub-image-base-raspberrypi3.wic.gz | sudo dd of=/dev/sdX*
 ```
