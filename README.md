@@ -15,5 +15,3 @@ mkdocs serve
 *mkdocs.yml* - it is the configuration file: navigation structure, theme definitions, personal informations, among others are here.  
 
 *docs* - this folder contains the pages contents of the documentation.
-
-*theme* - contains the Material content
