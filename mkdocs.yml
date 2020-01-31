@@ -30,7 +30,6 @@ extra:
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company/ossystems'
 
-
 # Google Analytics
 google_analytics:
   - 'UA-XXXXXXXX-X'
@@ -46,6 +45,7 @@ markdown_extensions:
 
 # Navigation
 nav:
+- Syntax: syntax/syntax.md
 - What is UpdateHub: introduction/what-is-updatehub.md
 - Quick starting with Raspberry Pi 3: getting-started/quick-starting-with-raspberrypi3.md
 - UpdateHub Cloud: updatehub-cloud/updatehub-cloud.md
@@ -69,4 +69,4 @@ nav:
 - Advanced: advanced/advanced.md
 #  - Generating RSA Key: advanced/generating-rsa-key.md
 - FAQ: 
-  - Questions: faq/faq-questions.md 
+  - Questions: faq/faq-questions.md
