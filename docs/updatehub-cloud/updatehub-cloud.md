@@ -13,7 +13,7 @@ In essence the dashboard allows the oversight over the whole **UpdateHub** plata
 
 The basis that connects all together through the **UpdateHub** is the *Product*. Essentially the *Product* includes one or multiple *Devices* and for each of them there is a *Package* version that may be updated using a *Rollout*
 
-### Creating a product 
+### Create 
 
 After you login in [UpdateHub](https://auth.updatehub.io/auth/login/) in the *Products* page click *Add Product*.
 
@@ -116,7 +116,7 @@ A software version, including the filesystem image, bootloader or any other obje
 
 In dashboard, the *Package* is available after you join in a specific *Product*.
 
-### Package Details
+### Details
 
 In the *Package Details* page the user may have a deeper look into a particular *Package* and its information.
 
@@ -126,7 +126,7 @@ Once you entered in the *Package Details* you have the option to remove the pack
 
 ![packages details](../img/dashboard/package.png)
 
-### Package List
+### List
 
 The *Packages* page, in the same fashion of the *Devices* page, exhibit a list with information about the packages inside a specific *Product* the user selected, such as:
 
@@ -159,13 +159,11 @@ If you like you can see details of the *Package* just clicking on the version in
 
 ![new package](../img/getting-started/package-new.png)
 
-## Rollout
-
 The *Rollout* is the process of deploying a specific version of your software, a *Package*, to a set of *Devices*. It can be simple as "send version 2.0 for all devices" or complex selecting specific filters and enforcing a gradual deployment across the devices set. 
 
 All the process happens over-the-air (OTA) and can update a great number of *Devices* effortlessly.
 
-### Creating 
+### Create
 
 There are two methods to execute the *Rollout*.
 
@@ -179,7 +177,7 @@ Keep in mind that this method will trigger the *Rollout* for all the *Devices* a
 
 The other way is to select which equipment receives the *Rollout* the **UpdateHub** offers the *Advanced mode* option. 
 
-### Advanced mode
+#### Advanced mode
 
 Whenever you need more control over the *Rollout* of a several *Devices* at once use the option *Advanced Mode*. 
 
@@ -191,7 +189,7 @@ The *Devices*  can filter by their Version, Hardware, Device Identifier (e.g: th
 
 It is important to bear in mind that you can create as many *Tasks* as possible as long there is *Devices* available for the *Rollout* and choose names for each individual *Task* in order to organize and identify them.
 
-### Rollout Details
+### Details
 
 The **UpdateHub** also gives all the information with the details of each specific *Rollout*, allowing a complete overview of the individual process. Among the information displayed inside the *Rollout Details* you will find:
 
