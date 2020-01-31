@@ -1,0 +1,56 @@
+# Project information
+site_name: 'UpdateHub'
+site_description: 'All your devices, always updated'
+site_url: 'https://github.com/UpdateHub'
+
+# Copyright
+copyright: 'Copyright &copy; 2020 O.S. Systems'
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  logo: 'img/assets/favicon.ico'
+  feature:
+
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - type: 'github'
+      link: 'https://github.com/OSSystems'
+    - type: 'twitter'
+      link: 'https://twitter.com/OSSystemsNews?s=20'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/ossystems'
+
+# Google Analytics
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+
+# Navigation
+nav:
+- Syntax: syntax.md
+- What is UpdateHub: what-is-updatehub.md
+- Quick starting with Raspberry Pi 3: quick-starting-with-raspberrypi3.md
+- UpdateHub Cloud: updatehub-cloud.md
+- Yocto Project guides: yocto-project-guides.md
+- Yocto Project reference: yocto-project-reference.md
+- Advanced: advanced.md
+- FAQ: 
+  - Questions: faq/faq-questions.md
