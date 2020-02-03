@@ -45,7 +45,6 @@ markdown_extensions:
 
 # Navigation
 nav:
-- Syntax: syntax.md
 - What is UpdateHub: what-is-updatehub.md
 - Quick starting with Raspberry Pi 3: quick-starting-with-raspberrypi3.md
 - UpdateHub Cloud: updatehub-cloud.md
@@ -54,3 +53,4 @@ nav:
 - Advanced: advanced.md
 - FAQ: 
   - Questions: faq/faq-questions.md
+- About this document: about-this-document.md
