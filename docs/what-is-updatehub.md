@@ -56,7 +56,7 @@ The *Rollout* is essentially a deployment plan. It can be simple as "send versio
 
 ##### Product
 
-The basis that connects all together through the **UpdateHub** is the *Product*. Essentially the *Product* includes one or multiple *Devices* and for each of them there is a *Package* version that may be updated using a *Rollout*.
+The base that connects everything together through the **UpdateHub** is the *Product*. Essentially the *Product* includes one or multiple *Devices* and for each of them there is a *Package* version that may be updated using a *Rollout*.
 
 ## UpdateHub Server Editions
 
@@ -99,25 +99,3 @@ See the comparison table below to help you to choose which version fits you need
 | Multiple products                            | ✘           | ✔              |
 | Advanced device filter                       | ✘           | ✔              |
 | Multiple users                               | ✘           | ✔              |
-
-## Syntax doc
-
-This doc will use some rules for a better undertanding. Below we describe the syntax adopted.
-
-### Emphasis
-
-**bold** - in technologies and enterprises name.
-
-*italic* - in **UpdateHub** variables and artefacts, dashboard options, system path and configurations, layers and file names.
-
-### Box
-
-!!! info "Information"
-	Info box brings additional information about what was recently covered.
-
-
-!!! warning "Important" 
-	Here are informations that can directly influence the user and his interactions with our produts, for instance, needed do account upgrade for have support for more devices. 
-
-!!! danger "Attention"
-	These box type we found alerts about system configurations and behaviors, like to verify the SD card before record the image, for example. 
