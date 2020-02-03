@@ -1,6 +1,6 @@
 # Syntax doc
 
-This doc will use some rules for a better undertanding. Below we describe the syntax adopted.
+This doc use some rules for a better undertanding. Below we describe the syntax adopted.
 
 ## Emphasis
 
@@ -15,7 +15,9 @@ This doc will use some rules for a better undertanding. Below we describe the sy
 
 
 !!! warning "Important" 
-	Here are informations that can directly influence the user and his interactions with our produts, for instance, needed do account upgrade for have support for more devices. 
+	Here are informations that can directly influence the user and his interactions with our products, for instance, the necessity do account upgrade for have support for more than 5 devices.
+
+
 
 !!! danger "Attention"
 	These box type we found alerts about system configurations and behaviors, like to verify the SD card before record the image, for example. 
