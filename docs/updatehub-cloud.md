@@ -7,11 +7,12 @@ Through the dashboard you, as the **UpdateHub** [user](https://auth.updatehub.io
 * Check when new *Packages* are available for updates
 * Oversee a fleet of *Devices* on the field
 * Deploy updates via an Over-The-Air system running the *Rollouts*
-In essence the dashboard allows the oversight over the whole **UpdateHub** plataform and operations, making it easy to manage any need that you might have.
+
+In essence the dashboard allows the oversight over the whole **UpdateHub** platform and operations, making it easy to manage any need that you might have.
 
 ## Product
 
-The basis that connects all together through the **UpdateHub** is the *Product*. Essentially the *Product* includes one or multiple *Devices* and for each of them there is a *Package* version that may be updated using a *Rollout*
+The base that connects everything together through the **UpdateHub** is the *Product*. Essentially the *Product* includes one or multiple *Devices* and for each of them there is a *Package* version that may be updated using a *Rollout*.
 
 ### Create 
 
@@ -23,22 +24,23 @@ By doing that the following dialog will be displayed.
 
 ![product modal](../img/dashboard/modalProduct.png)
 
-You should choose a *Product* name and who will have control over it by choosing  *Owner* (*Me* or a *Organization*) of the product. Bear in the mind that after you create a product you can not deleted it, so have sure you are choosing the correct owner.
+You should choose a *Product* name and who will have control over it by choosing  *Owner* (*Me* or a *Organization*) of the product. 
 
-!!! warning "Important"
-	If you want to create a *Product* that you will use in a single job, just select the product owner as *Me*, but remember that you can not transfer the *Products* to the organization or vice versa.
+!!! danger "Attention"
+	Bear in the mind that after you create a *Product* you can not renamed or deleted it, and you can not transfer it to a organization or vice versa, so have sure you are choosing the correct name and  the owner.
 
 ![](../img/dashboard/accesskey.png)
 
-After the *Product* has been created a *Unique Identifier Number* is generated to identify it. This number, should be added to your build in order to allow the **UpdateHub** agent, which runs inside the target device, to communicate with the **UpdateHub Cloud**.
-
-For convenience, you can add the *UPDATEHUB_PRODUCT_UID* to your  *build/conf/local.conf* configuration file when prototyping. However, as this is a information that will be permanent for the whole product life cycle, it should be put inside your distribution configuration file, or image recipe.
-
-The *UPDATEHUB_PRODUCT_UID* will be shown to you when you create your product inside the management server. It will look as:
+After the *Product* has been created a *Unique Identifier Number* \(*UPDATEHUB_PRODUCT_UID*\) is generated to identify it. This number, should be added to your build in order to allow the **UpdateHub** agent, which runs inside the target device, to communicate with the **UpdateHub Cloud**. It will look as:
 
 ```
 UPDATEHUB_PRODUCT_UID = "05344b71c3e9f8..."
 ```
+
+For convenience, you can add the *UPDATEHUB_PRODUCT_UID* to your  *build/conf/local.conf* configuration file when prototyping.
+
+However, as this is a information that will be permanent for the whole product life cycle, it should be put inside your distribution configuration file, or image recipe.
+
 After you press the *OK* button you will be into the *Products* screen where you can see all your *Product*, *Rollouts*, *Devices* and *Packages*.
 
 ![First Product Screen](../img/getting-started/productscreen.png)
@@ -53,9 +55,10 @@ Once you have logged in, the *Products* page will display the list of your own p
 
 Clicking on any product card, you will be taken to the *Product Overview* page. In this page you find useful information about the *Product*, as which *Devices* you have deployed on the field, the two last *Packages* sent for that particular *Product* and the *Rollouts* status.
 
-In case you didn't copy the *Product Unique Identifier Number* in the moment that you create it on the **UpdateHub Cloud** don't worry. To get access to this information again you must click on the *Product* icon and the *Unique Identifier Number* will be shown to you.
-
 ![overview](../img/dashboard/overview.png)
+
+!!! info "Information"
+	In case you didn't copy the *Product Unique Identifier Number* in the moment that you create it on the **UpdateHub Cloud** don't worry. To get access to this information again you must click on the *Product* icon and the *Unique Identifier Number* will be shown to you.
 
 ## Device 
 
@@ -66,7 +69,7 @@ The *Devices* page displays the list of registered devices for the *Product*.
 ### Include
 
 For include device in your account, just put the correct variables in *build/conf/local.conf* before generate an image with **Yocto Project**.
-The devides automatically connect in **UpdateHub** server which verify for update package. 
+The devices automatically connect in **UpdateHub** server which verify for update package. 
 Optionally we can create a *RSA* Key for add security in comunication.  
 
 ### Details
@@ -88,7 +91,7 @@ During a normal situation the device *Rollout* will be displayed showing the mom
 
 ![device finished](../img/dashboard/finished.png)
 
-In the case of some kind of problem happens during the update process, the **UpdateHub** will provide a visual feedback of the moment it occured. To examine the failure you need to select *See Device Log*.
+In the case of some kind of problem happens during the update process, the **UpdateHub** will provide a visual feedback of the moment it occurred. To examine the failure you need to select *See Device Log*.
 
 ![device installation](../img/dashboard/deviceLog.png)
 
@@ -140,17 +143,21 @@ The *Packages* page, in the same fashion of the *Devices* page, exhibit a list w
 Each one of these items help the user find a specific package. To filter more efficiently the packages you can select and associate them by the following items during the search:
 
 - Status of each package can be found depending on the situation for the *Rollout*
-  - *Available*: the package is ready to be downloaded
-  - *Upload in Progress*: package during the uploaded process
-  - *Removed*: packages that were removed from the packages list
-  - *Pending Progress*: packages being checked by the server
-  - *Packages with Error*: packages that failed the system checksum
+  	- *Available*: the package is ready to be downloaded
+  	- *Upload in Progress*: package during the uploaded process
+  	- *Removed*: packages that were removed from the packages list
+  	- *Pending Progress*: packages being checked by the server
+  	- *Packages with Error*: packages that failed the system checksum
 - Version for the package
 - Supported hardware
 
 ![packages list](../img/dashboard/packageList.png)
 
-### Rollout 
+## Rollout 
+
+The *Rollout* is the process of deploying a specific version of your software, a *Package*, to a set of *Devices*. It can be simple as "send version 2.0 for all devices" or complex selecting specific filters and enforcing a gradual deployment across the devices set. 
+
+All the process happens over-the-air (OTA) and can update a great number of *Devices* effortlessly.
 
 In *Rollout* page we may have acess to update package information as well. Look at the image below. 
 ![new package](../img/getting-started/rollout-new2.png)
@@ -158,10 +165,6 @@ In *Rollout* page we may have acess to update package information as well. Look 
 If you like you can see details of the *Package* just clicking on the version information.
 
 ![new package](../img/getting-started/package-new.png)
-
-The *Rollout* is the process of deploying a specific version of your software, a *Package*, to a set of *Devices*. It can be simple as "send version 2.0 for all devices" or complex selecting specific filters and enforcing a gradual deployment across the devices set. 
-
-All the process happens over-the-air (OTA) and can update a great number of *Devices* effortlessly.
 
 ### Create
 
@@ -175,15 +178,11 @@ You just need to go to the *Overview* or *Rollouts* page and click on *Create Ro
 
 Keep in mind that this method will trigger the *Rollout* for all the *Devices* accessible for the *Product* chosen, with no restrictions concerning the different hardware or other aspects of the fleet on the field. 
 
-The other way is to select which equipment receives the *Rollout* the **UpdateHub** offers the *Advanced mode* option. 
+The other way is to select which equipment receives the *Rollout* the **UpdateHub** offers the *Advanced Mode* option. 
 
-#### Advanced mode
+A *Task* will be automatically generated and you can use the filters offered by the **UpdateHub** for select the *Devices*. We indicate to use *Fault Tolerance* percentage because this is safe measure. The **UpdateHub** will abort the *Rollout* automatically if the failure rate goes over the threshould specified, providing a safe and fast update plan for your necessities.
 
-Whenever you need more control over the *Rollout* of a several *Devices* at once use the option *Advanced Mode*. 
-
-A *Task* will be automatically generated and you can use the filters offered by the **UpdateHub** for select the *Devices*. We indicate to use *Fault Tolerance* percentage because this safe measure. The **UpdateHub** will abort the *Rollout* automatically if the failure rate goes over the threshould specified, providing a safe and fast update plan for your necessities.
-
-The *Devices*  can filter by their Version, Hardware, Device Identifier (e.g: the MAC address) and Device Attributes (e.g: kernel version, device total memory). With multiple *Tasks* define the policy to begin new update processes by setting the starting point when a selected percentage of it is reached and the user can set if it must begin automatically or manually. Finally *Save* the *Rollout* to start later or *Save and Start* it immediately.
+The *Devices*  can be filter by their Version, Hardware, Device Identifier (e.g: the MAC address) and Device Attributes (e.g: kernel version, device total memory). With multiple *Tasks* you can define the policy to begin new update processes by setting the starting point when a selected percentage of it is reached and the user can set if it must begin automatically or manually. Finally *Save* the *Rollout* to start later or *Save and Start* it immediately.
 
 ![create rollout advanced](../img/dashboard/createRolloutAdvanced.png)
 
@@ -193,13 +192,13 @@ It is important to bear in mind that you can create as many *Tasks* as possible 
 
 The **UpdateHub** also gives all the information with the details of each specific *Rollout*, allowing a complete overview of the individual process. Among the information displayed inside the *Rollout Details* you will find:
 
-- *Version*: the version of *Rollout* that the *Device* will receive.
-- *Creation Date*: the date that the *Rollout* was created.
+- *Version*: the version of *Rollout* that the *Device* will receive
+- *Creation Date*: the date that the *Rollout* was created
 - *Tasks*: this area shows the each task that is part of the *Rollout*. Each task includes a number of information, such as:
-    - *Number of Devices*: all the *Devices* available for the *Rollout*, including the number of process concluded, failed, and remaining in one or various tasks are displayed here.
-    - *Fault tolerance*: that's the percentage limit of failures which can occur during the *Rollout* until the **UpdateHub** aborts the running rollout process, including any pending tasks.
-- *Play/Pause Rollout*: whenever the user wants to play or pause the *Rollout* the option is available, unless the process is aborted or the user chooses to archive it.
-- *Archive the Rollout*: once the rollout is not necessary anymore it can be archived and stopped definitely.
+    - *Number of Devices*: all the *Devices* available for the *Rollout*, including the number of process concluded, failed, and remaining in one or various tasks are displayed here
+    - *Fault tolerance*: that's the percentage limit of failures which can occur during the *Rollout* until the **UpdateHub** aborts the running rollout process, including any pending tasks
+- *Play/Pause Rollout*: whenever the user wants to play or pause the *Rollout* the option is available, unless the process is aborted or the user chooses to archive it
+- *Archive the Rollout*: once the rollout is not necessary anymore it can be archived and stopped definitely
 
 ![rollout details](../img/dashboard/rolloutDetails.png)
 
@@ -217,9 +216,9 @@ Sign in your account and go to settings screen by clicking on the drop down menu
 
 ![Menu dropdown](../img/dashboard/dropdownnewusr.png)
 
-- *Account*: includes the user name and e-mail address.
-- *Application Access*: contains different keys to access your data or a organization specific data.
-- *Organizations*: a space for all the organizations that the user participates.
+- *Account*: includes the user name and e-mail address
+- *Application Access*: contains different keys to access your data or a organization specific data
+- *Organizations*: a space for all the organizations that the user participates
 
 ![settings](../img/dashboard/settings.png)
 
@@ -239,13 +238,13 @@ In order to generate an *Access Key* you must enter the *Settings* menu and clic
 
 Once the access key is created a dialog will appear to show the security credentials. 
 !!! danger "Attention"
-	On the moment that this window is closed the keys will not be showed again and if you lose them you must revoke the Access Key and generate a new one.
+	On the moment that this window is closed the keys will not be showm again and if you lose them you must revoke the Access Key and generate a new one.
 
 ![](../img/dashboard/accesskey.png)
 
 ### Organization
 
-In addition to the *Access Key* created for the user to work individually, the **UpdateHub** grants the possibility of more than one user to have acess to the same *Product*.
+In addition to the *Access Key* created for the user to work individually, the **UpdateHub** grants the possibility of more than one user to have access to the same *Product*.
 
 #### Creating an Organization
 
@@ -254,9 +253,10 @@ Create an *Organization* is simple, as you just need to click on the *+ Create O
 ![organization](../img/dashboard/organization.png)
 
 There are three users access levels inside the *Organization*, each one with a particular set of permissions:
-- *Owner* - has all the permissions to normally create products, start rollouts and invite other members for the *Organization*;
-- *Release Manager* - limited to manage the rollouts;
-- *Developer* - has the permission to only create the packages.
+
+- *Owner* - has all the permissions to normally create products, start rollouts and invite other members for the *Organization*
+- *Release Manager* - limited to manage the rollouts
+- *Developer* - has the permission to only create the packages
 
 Each *Organization* will display a list with all of its members, showing their name, e-mail address, access level of permission, and a list with all the pending invites waiting to be answered.
 

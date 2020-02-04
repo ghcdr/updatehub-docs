@@ -101,7 +101,7 @@ For convenience, you can add the *UPDATEHUB_PRODUCT_UID* to your
 is a information that will be permanent for the whole product life cycle, it
 should be put inside your distribution configuration file, or image recipe.
 
-!!! information "Information"
+!!! info "Information"
 	In case you didn't copy the *Product Unique Identifier Number* in the moment
 	that you create it on the **UpdateHub Cloud** don't worry. To get access to this
 	information again you must click on the *Product* icon and the *Unique
