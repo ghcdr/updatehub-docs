@@ -12,7 +12,7 @@ development board, and how easily you can update the whole system
 **UpdateHub**.
 
 !!! warning "Important" 
-	Before starting this tutorial, check if your host **Linux** 	distribution is compatible and has all the dependencies required by **Yocto Project**, you can consult this	information at [Yocto Project Manual](https://www.yoctoproject.org/docs/3.0/mega-manual/mega-manual.html#required-packages-for-the-build-host).
+	Before starting this tutorial, check if your host **Linux** 	distribution is compatible and has all the dependencies required by **Yocto Project**. You can consult this	information at [Yocto Project Manual](https://www.yoctoproject.org/docs/3.0/mega-manual/mega-manual.html#required-packages-for-the-build-host).
 
 ## What You Will Need
 
@@ -28,8 +28,8 @@ hosted server.
 !!! info "Information"
 	An **UpdateHub** account allows manager even 5 devices; for more support and features is advisable migrate your plan. For more details click [here](https://updatehub.io/pricing/#pricing).
 
-We assume that you have a previous experience with the **Yocto Project**, know the
-main terms and already build an image using it.
+!!!	warning "Important"
+	We assume that you have a previous experience with the **Yocto Project**, know the main terms and already build an image using it.
 
 ## Preparing the Yocto Project environment
 
@@ -84,27 +84,28 @@ product.
 
 ![product modal](../img/dashboard/modalProduct.png)
 
-After the *Product* has been created a *Unique Identifier Number* is generated
+!!! danger "Attention"
+	Bear in the mind that after you create a *Product* you can not renamed or deleted it, and you can not transfer it to a organization or vice versa, so have sure you are choosing the correct name and  the owner.
+
+After the *Product* has been created a *Unique Identifier Number* \(*UPDATEHUB_PRODUCT_UID*\) is generated
 to identify it. This number, should be added to your build in order to allow the
 **UpdateHub** agent, which runs inside the target device, to communicate with
-the **UpdateHub Cloud**.
+the **UpdateHub Cloud**. The *Unique Identifier Number* will look as:
+
+```
+UPDATEHUB_PRODUCT_UID = "05344b71c3e9f8..."
+```
 
 For convenience, you can add the *UPDATEHUB_PRODUCT_UID* to your
 *../build/conf/local.conf* configuration file when prototyping. However, as this
 is a information that will be permanent for the whole product life cycle, it
 should be put inside your distribution configuration file, or image recipe.
 
-The *UPDATEHUB_PRODUCT_UID* will be shown to you when you create your product
-inside the management server. It will look as:
-
-```
-UPDATEHUB_PRODUCT_UID = "05344b71c3e9f8..."
-```
-
-In case you didn't copy the *Product Unique Identifier Number* in the moment
-that you create it on the **UpdateHub Cloud** don't worry. To get access to this
-information again you must click on the *Product* icon and the *Unique
-Identifier Number* will be shown to you.
+!!! information "Information"
+	In case you didn't copy the *Product Unique Identifier Number* in the moment
+	that you create it on the **UpdateHub Cloud** don't worry. To get access to this
+	information again you must click on the *Product* icon and the *Unique
+	Identifier Number* will be shown to you.
 
 Once you have logged in, the *Products* page will display the list of your own
 products and the other products you have access to.
@@ -124,9 +125,12 @@ on the *+ Request Access Key* button. Choose a name for the key and select the
 API Key owner as *Me*.
 
 Once the *Access Key* is created a dialog will appear to show the security
-credentials. On the moment that this window is closed the keys will not be
-showed again and if you lose them you must revoke the *Access Key* and generate a
-new one.
+credentials. 
+
+!!! danger "Attention"
+	On the moment that this window is closed the keys will not be
+	shown again and if you lose them you must revoke the *Access Key* and generate a
+	new one.
 
 ![](../img/dashboard/accesskey.png)
 
@@ -165,6 +169,9 @@ Open a terminal and go to your build directory and type:
 ```
 bitbake updatehub-image-base
 ```
+
+!!! info "Information"
+	The generate image process can take a good time, it is dependent directly of the host resources.
 
 Now it's time to record the image in the SD card. Then in a terminal go to this
 directory:
@@ -207,7 +214,7 @@ To add support for the SSH OpenSSH server add the following line to the *conf/lo
 IMAGE_FEATURES += "ssh-server-openssh"
 ```
 
-And change the variable UPDATEHUB_PACKAGE_VERSION_SUFFIX to use version 3 of our test image:
+And change the variable UPDATEHUB_PACKAGE_VERSION_SUFFIX to use version of our test image:
 
 ```
 UPDATEHUB_PACKAGE_VERSION_SUFFIX = "-test-image-2.0"
@@ -218,9 +225,7 @@ We can save the file, generate a new update package, and send the new file to **
 ```
 $: bitbake updatehub-image-base -c uhupush
 ```
-We can create a new rollout in **UpdateHub Cloud**, as shown in *Creating a Rollout* section, now using the version, which is the version with an SSH server installed.
-
-The installation procedure will be the same as the update procedure for version *-test-image-2.0*, and follow-up can be seen on the *Rollouts* tab. When the status shows updated, we can access the target using the SSH protocol, for this type in the host:
+We can create a rollout in **UpdateHub Cloud**, as shown in [*Creating a Rollout*](../updatehub-cloud/#create_1) section, using the version with an SSH server installed. After follow-up can be seen on the *Rollouts* tab. When the status shows updated, we can access the target using the SSH protocol, for this type in the host:
 
 ```
 ssh root@IP_DO_TARGET
