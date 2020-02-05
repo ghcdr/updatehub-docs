@@ -26,7 +26,7 @@ By doing that the following dialog will be displayed.
 
 You should choose a *Product* name and who will have control over it by choosing  *Owner* (*Me* or a *Organization*) of the product. 
 
-!!! danger "Attention"
+!!! danger "About the name and owner"
 	Bear in the mind that after you create a *Product* you can not renamed or deleted it, and you can not transfer it to a organization or vice versa, so have sure you are choosing the correct name and  the owner.
 
 ![](../img/dashboard/accesskey.png)
@@ -57,7 +57,7 @@ Clicking on any product card, you will be taken to the *Product Overview* page. 
 
 ![overview](../img/dashboard/overview.png)
 
-!!! info "Information"
+!!! info ""
 	In case you didn't copy the *Product Unique Identifier Number* in the moment that you create it on the **UpdateHub Cloud** don't worry. To get access to this information again you must click on the *Product* icon and the *Unique Identifier Number* will be shown to you.
 
 ## Device 
@@ -237,7 +237,7 @@ To authenticate and authorize requests for a project build with the **UpdateHub*
 In order to generate an *Access Key* you must enter the *Settings* menu and click on the *+ Request Access Key* button. Choose a name for the key and select the API Key owner as *Me* or a *Organization*.
 
 Once the access key is created a dialog will appear to show the security credentials. 
-!!! danger "Attention"
+!!! danger "Save your keys"
 	On the moment that this window is closed the keys will not be showm again and if you lose them you must revoke the Access Key and generate a new one.
 
 ![](../img/dashboard/accesskey.png)

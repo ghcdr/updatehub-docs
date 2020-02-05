@@ -11,7 +11,7 @@ has **UpdateHub** support using **Yocto Project** in a **Raspberry Pi 3**
 development board, and how easily you can update the whole system
 **UpdateHub**.
 
-!!! warning "Important" 
+!!! warning "" 
 	Before starting this tutorial, check if your host **Linux** 	distribution is compatible and has all the dependencies required by **Yocto Project**. You can consult this	information at [Yocto Project Manual](https://www.yoctoproject.org/docs/3.0/mega-manual/mega-manual.html#required-packages-for-the-build-host).
 
 ## What You Will Need
@@ -25,10 +25,10 @@ or [B+](http://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/).
 * An [UpdateHub account](https://auth.updatehub.io/auth/signup/) to access the
 hosted server.
 
-!!! info "Information"
+!!! info ""
 	An **UpdateHub** account allows manager even 5 devices; for more support and features is advisable migrate your plan. For more details click [here](https://updatehub.io/pricing/#pricing).
 
-!!!	warning "Important"
+!!!	warning ""
 	We assume that you have a previous experience with the **Yocto Project**, know the main terms and already build an image using it.
 
 ## Preparing the Yocto Project environment
@@ -84,7 +84,7 @@ product.
 
 ![product modal](../img/dashboard/modalProduct.png)
 
-!!! danger "Attention"
+!!! danger "About the name and owner"
 	Bear in the mind that after you create a *Product* you can not renamed or deleted it, and you can not transfer it to a organization or vice versa, so have sure you are choosing the correct name and  the owner.
 
 After the *Product* has been created a *Unique Identifier Number* \(*UPDATEHUB_PRODUCT_UID*\) is generated
@@ -101,7 +101,7 @@ For convenience, you can add the *UPDATEHUB_PRODUCT_UID* to your
 is a information that will be permanent for the whole product life cycle, it
 should be put inside your distribution configuration file, or image recipe.
 
-!!! info "Information"
+!!! info ""
 	In case you didn't copy the *Product Unique Identifier Number* in the moment
 	that you create it on the **UpdateHub Cloud** don't worry. To get access to this
 	information again you must click on the *Product* icon and the *Unique
@@ -127,7 +127,7 @@ API Key owner as *Me*.
 Once the *Access Key* is created a dialog will appear to show the security
 credentials. 
 
-!!! danger "Attention"
+!!! danger "Save your keys"
 	On the moment that this window is closed the keys will not be
 	shown again and if you lose them you must revoke the *Access Key* and generate a
 	new one.
@@ -170,8 +170,7 @@ Open a terminal and go to your build directory and type:
 bitbake updatehub-image-base
 ```
 
-!!! info "Information"
-	The generate image process can take a good time, it is dependent directly of the host resources.
+!!! info "The generate image process can take a good time, it is dependent directly of the host resources."
 
 Now it's time to record the image in the SD card. Then in a terminal go to this
 directory:
@@ -179,8 +178,7 @@ directory:
  *build/tmp/deploy/images/raspberrypi3/*
 
  and type this:
-!!! danger "Attention"
-	Check the name of the SD card device before executing the command below!
+!!! danger "Check the name of the SD card device before executing the command below!"
 ```
 zcat updatehub-image-base-raspberrypi3.wic.gz | sudo dd of=/dev/sdX*
 ```
